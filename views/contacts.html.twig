@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+        <link href='css/styles.css' rel='stylesheet' type='text/css'>
+        <title>Address book</title>
+    </head>
+    <body>
+        <div class='container'>
+            {% if contacts is not empty %}
+                <ul>
+                    {% for contact in contacts %}
+                        <li>{{ contact.getName }}
+                            <ul>
+                                <li>{{ contact.getPhone }}</li>
+                                <li>{{ contact.getAddress }}</li>
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <form action='/create_contact' method='post'>
+                <label for='name'>Name:</label>
+                <input id='name' name='name' type='text'>
+
+                <label for='phone'>Phone:</label>
+                <input id='phone' name='phone' type='text'>
+
+                <label for='address'>Address:</label>
+                <input id='address' name='address'>
+
+                <button type='submit'>Add contact</button>
+            </form>
+
+            <form action='/delete_contacts' method='post'>
+                <button type='submit'>Clear address book</button>
+            </form>
+        </div>
+    </body>
+</html>
