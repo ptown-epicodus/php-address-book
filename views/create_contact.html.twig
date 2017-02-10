@@ -7,12 +7,14 @@
     </head>
     <body>
         <div class='container'>
-            <h1>{{ contact.getName }}</h1>
+            <div class='new-contact'>
+                <h1>{{ contact.getName }}</h1>
 
-            <ul>
-                <li>{{ contact.getPhone }}</li>
-                <li>{{ contact.getAddress }}</li>
-            </ul>
+                <ul>
+                    <li>{{ contact.getPhone }}</li>
+                    <li>{{ contact.getAddress }}</li>
+                </ul>
+            </div>
 
             <a href='/'>Back to home</a>
         </div>
