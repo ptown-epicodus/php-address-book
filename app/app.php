@@ -3,6 +3,7 @@
 
     require_once __DIR__ . '/../vendor/autoload.php';
     require_once __DIR__ . '/../src/Contact.php';
+    require_once __DIR__ . '/../src/Address.php';
 
     session_start();
     if (empty($_SESSION['list_of_contacts'])) {
@@ -21,7 +22,8 @@
     });
 
     $app->post('/create_contact', function() use ($app) {
-        $contact = new Contact($_POST['name'], $_POST['phone'], $_POST['address']);
+        $address = new Address($_POST['address-line-1'], $_POST['address-line-2']);
+        $contact = new Contact($_POST['name'], $_POST['phone'], $address);
         $contact->save();
 
         return $app['twig']->render('create_contact.html.twig', array(

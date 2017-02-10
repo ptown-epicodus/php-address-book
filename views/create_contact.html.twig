@@ -12,7 +12,12 @@
 
                 <ul>
                     <li>{{ contact.getPhone }}</li>
-                    <li>{{ contact.getAddress }}</li>
+                    <li>
+                        <div class='address'>
+                            <p>{{ contact.getAddress.getLine1 }}</p>
+                            <p>{{ contact.getAddress.getLine2 }}</p>
+                        </div>
+                    </li>
                 </ul>
             </div>
 
