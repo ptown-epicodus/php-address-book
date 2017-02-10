@@ -4,11 +4,9 @@
 
 #### By Patrick McGreevy
 
-[GitHub Pages site](https://ptown-epicodus.github.io/php-address-book/)
-
 ## Description
 
-This website offers an address book to store contact information. 
+This website offers an address book to store contact information.
 
 
 ## Setup/Installation Requirements
